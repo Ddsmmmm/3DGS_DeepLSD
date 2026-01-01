@@ -10,8 +10,6 @@ import torch.nn as nn
 import numpy as np
 import cv2
 from typing import List, Tuple, Optional, Dict
-import kornia
-from kornia.feature import GFTTAFDetector
 
 
 class DeepLSDLineDetector(nn.Module):

@@ -158,8 +158,18 @@ def visualize_gaussians_and_lines(gaussian_positions: np.ndarray,
     geometries = [gaussian_pcd, line_pcd, coord_frame]
     
     if save_path:
-        # Save as PLY
-        o3d.io.write_point_cloud(save_path, gaussian_pcd + line_pcd)
+        # Save as PLY - merge point clouds
+        combined_pcd = o3d.geometry.PointCloud()
+        combined_pcd.points = o3d.utility.Vector3dVector(
+            np.vstack([np.asarray(gaussian_pcd.points), np.asarray(line_pcd.points)])
+        )
+        # Merge colors
+        gaussian_colors = np.asarray(gaussian_pcd.colors)
+        line_colors = np.asarray(line_pcd.colors)
+        combined_pcd.colors = o3d.utility.Vector3dVector(
+            np.vstack([gaussian_colors, line_colors])
+        )
+        o3d.io.write_point_cloud(save_path, combined_pcd)
     else:
         o3d.visualization.draw_geometries(geometries,
                                          window_name='Gaussians and Lines',

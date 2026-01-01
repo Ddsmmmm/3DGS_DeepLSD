@@ -6,6 +6,7 @@ import numpy as np
 import json
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+from scipy.spatial.transform import Rotation
 from .line_reconstructor import CameraPose
 
 
@@ -67,7 +68,6 @@ def load_colmap_cameras(cameras_file: str,
             
             # Convert quaternion to rotation matrix
             # COLMAP uses quaternion as [w, x, y, z]
-            from scipy.spatial.transform import Rotation
             R = Rotation.from_quat([qx, qy, qz, qw]).as_matrix()
             t = np.array([tx, ty, tz])
             
