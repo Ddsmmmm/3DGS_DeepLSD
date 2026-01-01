@@ -1,0 +1,33 @@
+# Fast Configuration
+# Optimized for speed at the cost of some quality
+
+line_detector:
+  type: 'lsd'
+  min_length: 15.0
+  max_num_lines: 200  # Fewer lines for faster processing
+  score_threshold: 0.4
+
+video_loader:
+  frame_skip: 5  # Process every 5th frame
+  target_size: [640, 480]  # Resize for faster processing
+
+line_reconstructor:
+  reprojection_threshold: 8.0  # More lenient threshold
+  min_triangulation_angle: 3.0  # Smaller angle requirement
+  min_support_views: 2
+
+gaussian_constraint:
+  line_weight: 0.8
+  density_weight: 0.3
+  alignment_weight: 0.2
+  max_distance: 0.15
+
+gaussian_initializer:
+  num_gaussians_per_line: 5  # Fewer Gaussians per line
+  initial_scale: 0.015
+  initial_opacity: 0.4
+
+alignment:
+  enable: true
+  reference_point: null
+  reference_scale: 1.0

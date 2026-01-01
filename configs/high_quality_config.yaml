@@ -1,0 +1,33 @@
+# High Quality Configuration
+# Optimized for better reconstruction quality at the cost of computation time
+
+line_detector:
+  type: 'lsd'
+  min_length: 20.0  # Longer lines for more stable reconstruction
+  max_num_lines: 1000  # More lines for better coverage
+  score_threshold: 0.6  # Higher threshold for better quality
+
+video_loader:
+  frame_skip: 1  # Process all frames
+  target_size: null
+
+line_reconstructor:
+  reprojection_threshold: 3.0  # Stricter reprojection threshold
+  min_triangulation_angle: 8.0  # Larger angle for better triangulation
+  min_support_views: 3  # Require more support views
+
+gaussian_constraint:
+  line_weight: 1.5  # Stronger line constraint
+  density_weight: 0.7  # Stronger density regularization
+  alignment_weight: 0.5  # Stronger alignment
+  max_distance: 0.08  # Tighter association
+
+gaussian_initializer:
+  num_gaussians_per_line: 15  # More Gaussians per line
+  initial_scale: 0.008  # Smaller initial scale
+  initial_opacity: 0.6  # Higher initial opacity
+
+alignment:
+  enable: true
+  reference_point: null
+  reference_scale: 1.0
