@@ -1,0 +1,2 @@
+/usr/bin/ar qc libProgressiveX.a CMakeFiles/ProgressiveX.dir/src/pyprogressivex/include/PEARL.cpp.o
+/usr/bin/ranlib libProgressiveX.a

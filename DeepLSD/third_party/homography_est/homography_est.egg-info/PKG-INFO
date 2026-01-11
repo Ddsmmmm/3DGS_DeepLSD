@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: homography_est
+Version: 0.0.0
+Summary: Point-Line homography estimation bindings
+Author: Viktor Larsson, Iago Suarez, Rémi Pautrat
+Author-email: remi.pautrat@inf.ethz.ch
+License-File: LICENSE

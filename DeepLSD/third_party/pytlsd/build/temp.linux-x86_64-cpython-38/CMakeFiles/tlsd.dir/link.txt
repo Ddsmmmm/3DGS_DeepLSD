@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtlsd.a CMakeFiles/tlsd.dir/src/lsd.cpp.o
+/usr/bin/ranlib libtlsd.a

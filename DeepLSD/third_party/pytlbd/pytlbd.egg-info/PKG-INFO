@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: pytlbd
+Version: 0.0.3
+Summary: Transparent bindings of LBD (Line Band Descriptor)
+Author: Iago Suarez
+Author-email: iagoh92@gmail.com
+License-File: LICENSE

@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: pytlsd
+Version: 0.0.3
+Summary: Trainsparent bindings of LSD (Line Segment Detector)
+Author: Iago Suarez
+Author-email: iagoh92@gmail.com
+License-File: LICENSE

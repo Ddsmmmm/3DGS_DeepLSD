@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: line_refinement
+Version: 0.0.0
+Summary: Line segments and VP optimization from attraction fields
+Author: Rémi Pautrat
+Author-email: remi.pautrat@inf.ethz.ch

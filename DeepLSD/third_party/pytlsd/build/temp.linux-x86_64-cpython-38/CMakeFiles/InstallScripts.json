@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/ddsm/DownLoad/DeepLSD/third_party/pytlsd/build/temp.linux-x86_64-cpython-38/cmake_install.cmake",
+		"/home/ddsm/DownLoad/DeepLSD/third_party/pytlsd/build/temp.linux-x86_64-cpython-38/pybind11/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
