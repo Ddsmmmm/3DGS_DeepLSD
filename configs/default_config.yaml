@@ -1,0 +1,39 @@
+# Configuration for 3DGS_DeepLSD Pipeline
+
+# Line detector settings
+line_detector:
+  type: 'lsd'  # Options: 'lsd', 'deeplsd'
+  min_length: 15.0  # Minimum line length in pixels
+  max_num_lines: 500  # Maximum lines per frame
+  device: 'cuda'  # Device for DeepLSD: 'cuda' or 'cpu'
+  score_threshold: 0.5  # Minimum confidence score for DeepLSD
+
+# Video/Image loader settings
+video_loader:
+  frame_skip: 1  # Process every Nth frame
+  target_size: null  # Resize frames to [width, height], or null for original size
+
+# Line reconstruction settings
+line_reconstructor:
+  reprojection_threshold: 5.0  # Maximum reprojection error in pixels
+  min_triangulation_angle: 5.0  # Minimum angle between views (degrees)
+  min_support_views: 2  # Minimum number of views supporting a 3D line
+
+# Gaussian constraint settings
+gaussian_constraint:
+  line_weight: 1.0  # Weight for line proximity loss
+  density_weight: 0.5  # Weight for density regularization
+  alignment_weight: 0.3  # Weight for orientation alignment
+  max_distance: 0.1  # Maximum distance for line-Gaussian association
+
+# Gaussian initialization settings
+gaussian_initializer:
+  num_gaussians_per_line: 10  # Number of Gaussians per 3D line
+  initial_scale: 0.01  # Initial scale for Gaussians
+  initial_opacity: 0.5  # Initial opacity value
+
+# Coordinate alignment settings
+alignment:
+  enable: true  # Enable alignment to 3DGS coordinate system
+  reference_point: null  # Reference point [x, y, z] or null for auto
+  reference_scale: 1.0  # Scale factor for alignment
